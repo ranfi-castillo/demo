@@ -45,7 +45,7 @@ jobs:
         IMAGE_NAME: docker.io/rcastillod/demo
         IMAGE_DIGEST: ${{ steps.build.outputs.digest }}
       run: |
-        sed -i "s|image: ${IMAGE_NAME}.*|image: ${IMAGE_NAME}@sha256:${IMAGE_DIGEST}|" kustomize/base/deployment.yaml
+        sed -i "s|image: ${IMAGE_NAME}.*|image: ${IMAGE_NAME}@${IMAGE_DIGEST}|" kustomize/base/deployment.yaml
     
     - name: Commit manifest change (skip CI)
       run: |
