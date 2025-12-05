@@ -8,7 +8,7 @@ resources:
 
 configMapGenerator:
   - name: demo
-    behavior: replace
+    behavior: merge
     literals:
       - APP_ENV=dev
 
