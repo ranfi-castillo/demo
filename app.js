@@ -43,7 +43,7 @@ app.get('/', (req, res) => {
           lastVersion = version;
         }
       } catch (error) {
-        console.error('Fetch error:', error);
+        console.error('Fetch error: ', error);
       }
     }
       
