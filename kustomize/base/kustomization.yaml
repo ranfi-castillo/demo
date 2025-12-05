@@ -1,0 +1,15 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: default
+
+resources:
+  - deployment.yaml
+  - service.yaml
+
+configMapGenerator:
+  - name: demo
+    literals:
+      - APP_VERSION="1.0.0"
+      - APP_ENV=default
+      - PORT=3000
+
