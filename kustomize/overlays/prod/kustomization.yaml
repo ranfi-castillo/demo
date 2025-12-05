@@ -28,4 +28,4 @@ patches:
   patch: |-
     - op: replace
       path: /spec/replicas
-      value: 3
+      value: 2
