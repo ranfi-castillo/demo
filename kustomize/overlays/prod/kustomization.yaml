@@ -21,3 +21,11 @@ patches:
     - op: replace
       path: /spec/ports/0/nodePort
       value: 30080
+- target:
+    version: v1
+    kind: Deployment
+    name: demo
+  patch: |-
+    - op: replace
+      path: /spec/replicas
+      value: 3
