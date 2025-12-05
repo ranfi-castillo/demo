@@ -36,3 +36,19 @@ jobs:
         push: true
         tags: ${{ steps.meta.outputs.tags }}
         labels: ${{ steps.meta.outputs.labels }}
+    
+    - name: Update K8s manifest with image digest (sed)
+      env:
+        IMAGE_NAME: rcastillod/demo
+        IMAGE_DIGEST: ${{ steps.build.outputs.digest }}
+      run: |
+        sed -i "s|image: ${IMAGE_NAME}.*|image: ${IMAGE_NAME}@sha256:${IMAGE_DIGEST}|" kustomize/base/deployment.yaml
+    
+    - name: Commit manifest change (skip CI)
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add kustomize/base/deployment.yaml
+        git commit -m "chore: pin ${IMAGE_NAME} to digest ${IMAGE_DIGEST} [skip ci]"
+        git push
+
