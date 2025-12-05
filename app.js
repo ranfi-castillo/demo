@@ -17,13 +17,16 @@ app.get('/', (req, res) => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Demo - ${ENV}</title>
     <style>
-      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; text-align: center; margin-top: 20vh; }
+      body {
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; text-align: center;
+        margin-top: 20vh; background-color: lightblue;
+      }
       h1 { font-size: 4rem; margin-bottom: 0.5rem; }
       p  { font-size: 1.25rem; color: #555; }
     </style>
   </head>
   <body>
-    <h1>Hello from: <strong>${ENV}</strong>!</h1>
+    <h1>Hello from: <strong>${ENV}</strong>! (v${VERSION})</h1>
   </body>
   <script>
     var lastVersion = '';
