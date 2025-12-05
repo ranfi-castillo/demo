@@ -15,7 +15,7 @@ spec:
         app: demo
     spec:
       containers:
-      - image: docker.io/rcastillod/demo@sha256:a0d48d04a7057a479ffd1b2ad11b36976c30803676970d3195225bf2a0adc122
+      - image: docker.io/rcastillod/demo@sha256:4c82d7ac5d960c435c6d09b52a3bb2da62acaff1bef93943ba49832b0e3fbbfb
         name: demo
         envFrom:
         - configMapRef:
