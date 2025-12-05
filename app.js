@@ -19,7 +19,7 @@ app.get('/', (req, res) => {
     <style>
       body {
         font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; text-align: center;
-        margin-top: 20vh; background-color: lightblue;
+        margin-top: 20vh; background-color: lightgreen;
       }
       h1 { font-size: 4rem; margin-bottom: 0.5rem; }
       p  { font-size: 1.25rem; color: #555; }
