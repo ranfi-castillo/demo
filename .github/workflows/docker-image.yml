@@ -39,7 +39,7 @@ jobs:
     
     - name: Update K8s manifest with image digest (sed)
       env:
-        IMAGE_NAME: rcastillod/demo
+        IMAGE_NAME: docker.io/rcastillod/demo
         IMAGE_DIGEST: ${{ steps.build.outputs.digest }}
       run: |
         sed -i "s|image: ${IMAGE_NAME}.*|image: ${IMAGE_NAME}@sha256:${IMAGE_DIGEST}|" kustomize/base/deployment.yaml
